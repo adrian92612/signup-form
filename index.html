@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Signup for the Matrix</title>
+  </head>
+  <body>
+    <div class="left">
+      <div class="logo-container">
+        <!-- <img
+            class="logo"
+            src="/signup-form/pictures/odin-lined.png"
+            alt="the odin project logo"
+          /> -->
+        <p><strong>Enter The Matrix</strong></p>
+      </div>
+      <img
+        class="left-bg"
+        src="/signup-form/pictures/ihnatsi-yfull-PsWGBVGHZ2c-unsplash.jpg"
+        alt="guy with green matrix lights"
+      />
+    </div>
+    <div class="right">
+      <div class="description">
+        <p>
+          Plug yourself into the <strong>MATRIX</strong> and dive deep into the
+          rabbit hole! <br /><br /><br /><em>There is no <s>spoon...</s></em>
+        </p>
+      </div>
+      <div class="form-container">
+        <form id="form" action="">
+          <div class="left-form">
+            <div class="input-box">
+              <input type="text" id="first-name" name="first-name" required />
+              <label for="first-name">FIRST NAME</label>
+            </div>
+            <div class="input-box">
+              <input type="email" id="email" name="email" required />
+              <label for="email">EMAIL</label>
+            </div>
+            <div class="input-box">
+              <input type="password" id="password" name="password" required />
+              <label for="password">PASSWORD</label>
+            </div>
+          </div>
+          <div class="right-form">
+            <div class="input-box">
+              <input type="text" id="last-name" name="last-name" required />
+              <label for="last-name">LAST NAME</label>
+            </div>
+            <div class="input-box">
+              <input
+                type="tel"
+                id="phone-number"
+                name="phone-number"
+                required
+              />
+              <label for="phone-number">PHONE NUMBER</label>
+            </div>
+            <div class="input-box">
+              <input type="password" id="password2" name="password2" required />
+              <label for="password2">CONFIRM PASSWORD</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="bottom">
+        <button type="submit" form="form">SIGN UP</button>
+      </div>
+    </div>
+  </body>
+</html>
