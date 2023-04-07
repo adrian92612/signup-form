@@ -5,13 +5,12 @@
 
 * {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
   padding: 0;
   margin: 0;
 
-  --matrixGreen: #64d86b;
   color: white;
   font-family: myFont;
+  font-weight: bolder;
 }
 
 body {
@@ -20,12 +19,14 @@ body {
   width: 100vw;
 }
 
+/* LEFT SIDE */
 .left {
   position: relative;
   height: 100%;
-  width: 40%;
+  width: 35%;
   display: flex;
-  box-shadow: 0 0 20px red;
+  box-shadow: 1px 1px 30px red;
+  border-right: 1px solid red;
 }
 
 .left-bg {
@@ -34,6 +35,7 @@ body {
 }
 
 .logo-container {
+  animation: transitionIn2 3s;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -49,131 +51,185 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px #64d86b;
   text-shadow: 0 0 10px #64d86b;
-  letter-spacing: 20px;
-}
-
-.logo-container:focus {
-  outline: none;
-  border-color: rgb(100, 255, 100);
-  box-shadow: 0 0 10px rgb(100, 255, 100);
+  letter-spacing: 15px;
 }
 
 .logo-container > p {
   color: antiquewhite;
 }
 
-.logo {
-  width: 100px;
-  height: auto;
-}
-
+/* RIGHT SIDE */
 .right {
+  width: 65%;
   height: 100%;
-  width: 60%;
-  box-shadow: 0 0 50px white;
-  display: flex;
-  flex-direction: column;
-  background-image: url("/signup-form/pictures/eugene-belyavskiy-JA0R0Q0tewA-unsplash.jpg");
+  background-image: url(/signup-form/pictures/eugene-belyavskiy-JA0R0Q0tewA-unsplash.jpg);
   background-position: center;
   background-size: cover;
 }
 
-.description,
-.form-container {
-  height: 40%;
+/* RIGHT SIDE HEADER */
+.header {
   width: 100%;
-}
-
-.bottom {
-  height: 20%;
-  width: 100%;
-}
-
-.description {
+  height: 35%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  letter-spacing: 0.3rem;
-  text-shadow: 0 0 10px red;
+  padding: 0 150px;
+  font-size: 1.6rem;
+  letter-spacing: 0.5rem;
+  text-shadow: 3px 3px 10px red;
+  animation: transitionIn 3s;
 }
 
-.description > p {
-  width: 80%;
+/* RIGHT SIDE FORM */
+.form-container {
+  box-shadow: 10px 10px 20px whitesmoke;
+  width: 100%;
+  height: 35%;
 }
 
 #form {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  animation: transitionIn 3s;
 }
 
 #form div {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  margin: 0 100px;
 }
 
-.input-box {
-  position: relative;
-  width: 300px;
-}
-
-.input-box input {
-  width: 100%;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  border: 1px solid var(--matrixGreen);
-  outline: none;
-  color: white;
-  font-size: 1em;
-}
-
-.input-box label {
+label {
   position: absolute;
   left: 0;
-  padding: 10px;
-  color: rgba(200, 200, 200, 1);
-  text-shadow: 0 0 5px var(--matrixGreen);
-  pointer-events: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  letter-spacing: 0.2em;
   font-size: 1em;
+  text-shadow: 0 0 3px green;
+  opacity: 0.5;
   transition: 0.5s;
 }
 
-.input-box input:valid ~ label,
-.input-box input:focus ~ label {
-  color: var(--matrixGreen);
-  translate: 10px -15px;
+.input-form input:focus ~ label,
+.hover {
+  transform: translate(20px, -15px);
   font-size: 0.8em;
   padding: 5px 10px;
   background-color: black;
   border-radius: 10px;
-  box-shadow: 0 0 3px var(--matrixGreen);
+  box-shadow: 0 0 3px green;
+  color: green;
+  opacity: 1;
 }
 
-.input-box input:valid,
-.input-box input:focus {
-  box-shadow: 0 0 30px var(--matrixGreen);
+.input-form > small {
+  position: absolute;
+  text-shadow: 0 0 3px black;
+  left: 0;
+  color: red;
+  translate: 5px 43px;
 }
 
-input[type="password"] {
-  font-family: sans-serif;
+.input-form {
+  width: 250px;
+  position: relative;
+}
+
+#password,
+#password2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  text-shadow: 0 0 3px red;
+  border: 1px solid whitesmoke;
+  box-shadow: 10px 10px 15px whitesmoke;
+  background: rgba(0, 0, 0, 0.8);
+  outline: none;
+  color: white;
+}
+
+.success {
+  border: 2px solid green;
+  box-shadow: 10px 10px 15px lime;
+}
+.error {
+  border: 2px solid red;
+  box-shadow: 10px 10px 15px red;
+}
+
+/* RIGHT SIDE BOTTOM */
+
+.bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 30px;
+  position: relative;
+  animation: transitionIn 3s;
 }
 
 button {
   padding: 10px 40px;
-  margin-left: 10%;
   font-size: 1em;
   letter-spacing: 1em;
   border-radius: 10px;
   border: 1px solid black;
   box-shadow: 0 0 10px white;
-  background-color: var(--matrixGreen);
+  background-color: green;
   color: black;
   text-shadow: 0 0 2px green;
   font-weight: bolder;
+}
+button:active {
+  transform: translateY(2px);
+  transform: scale(0.99);
+}
+#btn-error {
+  position: absolute;
+  translate: 0 70px;
+  letter-spacing: 10px;
+  font-size: 1.2rem;
+  color: red;
+}
+
+button ~ p {
+  margin-top: 10px;
+  letter-spacing: 5px;
+}
+
+/* ANIMATIONS */
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(500px);
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    transform: scale(1);
+  }
+}
+@keyframes transitionIn2 {
+  from {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
